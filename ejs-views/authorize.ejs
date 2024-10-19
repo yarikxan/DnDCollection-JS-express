@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Welcome back! </title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="h-screen bg-neutral-900 flex items-center justify-center flex-col">
+    <section id="loginBox" class=" hidden basis-1/2 w-96 my-20 bg-neutral-800 rounded-lg flex flex-col items-center">
+        <form id="loginForm" class=" w-full flex flex-col items-center">
+            <h1 class="text-3xl text-purple-600 my-8"> Welcome back!</h1>
+            <h1 id="errorMsg" class="text-xl text-red-600 mb-8 hidden"></h1>
+
+            <label for="loginInput" class="text-gray-400">Login </label>
+            <input class="mb-5" id="loginInput" type="text">
+
+            <label for="passwordInput" class="text-gray-400">Password </label>
+            <input class="mb-5" id="passwordInput" pattern="" type="password">
+            
+            <button id="submitLogin" class="px-10 py-3 bg-purple-600 hover:bg-purple-500 transition duration-300 text-white text-semibold text-lg rounded-lg"type="submit">Submit</button>
+            <p class="mt-10 mx-auto text-gray-400 text-semibold text-lg"> You can make a <button id="switchToReg" class="text-purple-500 hover:underline">new account</button> <br>
+                or <button id='resetPassword' class="text-purple-500 hover:underline"> reset </button> password
+            </p>
+
+        </form>
+    </section>
+
+    <section id="registerBox" class=" hidden basis-1/2 w-96 my-20 bg-neutral-800 rounded-lg flex flex-col items-center">
+        <form id="regForm" class="w-full flex flex-col items-center">
+            <h1 class="text-3xl text-purple-600 my-8"> Welcome</h1>
+            <h1 id='regErrorMsg' class='text-xl text-red-600 mb-8 hidden'></h1>
+
+            <label for="regLoginInput" class="text-gray-400">Login</label>
+            <input class="mb-5" id="regLoginInput" type="text"  required>
+
+            <label for="regEmailInput" class="text-gray-400">Email</label>
+            <input class="mb-5" id="regEmailInput" type="email" required>
+
+            <label for="regNameInput" class="text-gray-400">Username</label>
+            <input class="mb-5" id="regNameInput" type="text" required>
+
+            <label for="regPasswordInput" class="text-gray-400"> Password</label>
+            <input class="mb-5" id="regPasswordInput" type="text" pattern="(?=.*\d)(?=.*[a-zA-z]).{8,22}" required>
+
+            <button id="submitReg" class="px-10 py-3 bg-purple-600 hover:bg-purple-500 transition duration-300 text-white text-semibold text-lg rounded-lg" type="submit">Submit</button>
+            <p class="my-5 text-gray-400 text-semibold text-lg"> You can <button id="switchToLogin" class="text-purple-500 hover:underline"> login</button> </p>
+
+        </form>
+    </section>
+
+    <section id="resetPasswordBox" class="hidden basis-1/2 min-w-96 my-20 bg-neutral-800 rounded-lg flex flex-col items-center">
+        <form id="resetPasswordForm" class="w-full flex flex-col items-center">
+            <h1 class="text-3xl text-purple-600 my-8"> Forgot password? </h1>
+            <h1 id='resetErrorMsg' class="text-xl text-red-600 mb-8 hidden "></h1>    
+            <h1 id='resetInfoMsg' class="text-xl text-green-600 mb-8 hidden "></h1>
+
+            <label for="resetEmailInput" class="text-gray-400">Email</label>
+            <div class="flex items-center mb-8">
+                <input class="mr-1" id="resetEmailInput" type='email'>
+                <button class="px-2 bg-purple-600 hover:bg-purple-500 transition duration-300 text-white text-bold text-md" id="resetEmailBtn"> send</button> 
+            </div>
+
+            <label for="resetCodeInput" class="text-gray-400">Code from email goes here</label>
+            <div class="flex items-center mb-8">
+                <input class="mr-1" id="resetCodeInput" type="text">
+                <!-- <button class="hidden px-2 bg-purple-600 hover:bg-purple-500 transition duration-300 text-white text-semibold text-md" id="resetCodeBtn"> send </button> -->
+            </div>
+
+            <label for="resetPasswordInput" class="text-gray-400"> New password </label>
+            <input class='mb-5'id="resetPasswordInput" type='text'>
+            <button class='hidden mb-3 px-10 py-3 bg-purple-600 hover:bg-purple-500 transition duration-300 text-white text-semibold text-lg rounded-lg' id="resetPasswordBtn"> apply </button>
+            <p class="my-5 text-gray-400 text-semibold text-lg"> Back to <button id="resetSwitchToLogin" class="text-purple-500 hover:underline"> login</button> </p>
+        </form>
+
+    </section>
+</body>
+<script> window.destination = <%- JSON.stringify(destination) %> </script>
+<script type='module' src="scripts/regUser.js"></script>
+<script type='module' src="scripts/loginUser.js"></script>
+<script type='module' src="scripts/resetPassword.js"></script>
+</html>

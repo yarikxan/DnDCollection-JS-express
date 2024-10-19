@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> A bag of cards </title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-neutral-800">
+<div class="h-screen grid grid-rows-[auto_1fr_auto]">    
+    
+    <%- include("partials/header.ejs") %>
+
+    <main class="">
+        <div class="w-screen-xl mx-20 mt-10 flex">
+            <!--Cards section -->
+            <div class="basis-4/5 bg-neutral-600 grow rounded-l-lg flex">
+                <section id="cardList" class="w-full grid grid-cols-4 gap-3 m-5 ">
+                    
+                    <!-- card preset for tailwind -->
+                    <div id='cardSlot' class="cardSlot hover:border-purple-500">
+                        <div class="col-span-2 row-span-2">
+                            <img class="object-cover w-full h-full rounded-lg">
+                        </div>
+                        <h2 id='cardType' class=" text-bold text-gray-400 text-xl col-span-2 self-center"></h2>
+                        <p id='cardName' class=" text-semibold text-xl text-gray-400 row-start-2 col-start-3 col-span-4"></p>
+                        <p id='cardLevel' class="text-semibold  text-xl text-gray-400 row-start-1 col-start-5 col-span-2 self-center" ></p>
+                        <p id='cardDescription' class="cardDescription border-2 border-neutral-600 rounded-lg text-gray-400 text-semibold text-xl row-start-3 row-span-4 col-span-6 hover:border-neutral-600"></p>
+                    </div>
+                    <!-- end of card preset -->
+                
+                </section>
+            </div>
+            
+            <!-- (Searchbar and "make your own card") and Filters -->
+            <div class="basis-1/5 bg-neutral-700 grow rounded-r-lg flex flex-col">
+                <section class="basis-1/4 m-2 flex flex-col items-center justify-around">
+                    <h2 class="font-bold text-3xl text-gray-400"> Find a card <h2>
+                    
+                    <form id="searchForm">
+                        <input id="searchInput" class="py-1" type="search" placeholder="Sanya" aria-label="CardSearch">
+                        <button class="bg-white px-2 py-1" type="submit">Search</button>
+                    </form>
+                    <h2 class="font-bold uppercase text-5xl text-gray-400"> or </h2>
+                    
+                    <a class="font-semibold text-2xl text-white bg-purple-500 hover:bg-purple-600 transition duration-300 p-2 rounded-lg " href="/workshop"> Make your own</a>
+
+                    <div class="border-2 px-24 border-neutral-600"></div>
+
+                </section>
+
+                <section class="basis-3/4 m-2 flex flex-col items-center">
+                    <h2 class="font-bold text-3xl text-gray-400"> Filter </h2>
+
+                    <form id="filterForm" class="flex flex-col">
+
+                        <label class="text-bold text-2xl text-purple-500">Sort by</label>
+                        <select class="mb-5">
+                            <option value="newest"> Newest</label>
+                            <option value="mostFavs">Popular</label>
+                        </select>
+
+                        <label class="text-bold text-2xl text-purple-500"> Cards' type </label>
+                        <select id="cardType" class="mb-5">
+                            <option value="">All</option>
+                            <option value="Monster">Monsters</option>
+                            <option value="PC">PCs</option>
+                            <option value="NPC"> NPCs</option>
+                        </select>
+                        
+                        <label class="text-bold text-2xl text-purple-500"> Cards' class </label>
+                        <h1 id="classError" class="text-red-700 text-md hidden" >Only one word without digits</h1>
+                        <input class="mb-5" type="text" id="cardClass" name="cardClass" placeholder="Barbarian">
+
+                        <label class="text-bold text-2xl text-purple-500">Level's range</label>
+                        <h1 id="levelError" class="text-red-700 text-md hidden"> Less/equal than 20 <br>  and more/equal than 1</h1>
+                        <div class="flex mb-5">
+                        <input class="w-24 mr-1"type="number" id="minLevel" name="minLevel" placeholder="1">
+                        <input class="w-24 ml-1"type="number" id="maxLevel" name="maxLevel" placeholder="20">
+                        </div>
+                        
+                        <button type="submit" id="submitFilter" class="font-semibold text-2xl text-white bg-purple-500 hover:bg-purple-600 transition duration-300 rounded-lg p-2">Apply filters </button>
+                    </form>
+                    <h1 class="hidden text-xl text-white">Loading...</h1>
+
+                    <!-- pagination -->
+                    <section>
+                        
+                    </section>
+                </section>
+            </div>
+        </div>
+        
+    </main>
+</div>
+</body>
+<script src="scripts/paginationAndFilters.js"></script>
+<!--<script scr="scripts/filterValidate.js"></script>-->
+</html>

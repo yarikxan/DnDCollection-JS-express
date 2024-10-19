@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> your jorney </title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <div class="h-screen bg-slate-400 flex">
+        <!-- Main window -->
+        <div class="basis-3/4 bg-slate-400 flex items-center justify-center">
+            <div class="bg-neutral-600 rounded-lg flex flex-col">
+                <label class="self-center text-white text-xl pt-1" for="Map_input"> Choose a map for combat: </label>
+                <form class="p-3">
+                    <input class="text-white" id="Map_input" type="file" accept="image/png, image/jpeg">
+                </form>
+            </div>
+        </div>
+
+        <div class="basis-1/4 bg-neutral-800 rounded-l-lg flex flex-col">
+        <!-- navigation --!>
+            <div class="">
+                <ul class="flex items-inline mx-auto">
+                    <li class=""><button id="favBtn" class="text-white bg-neutral-700 p-4 rounded-t-lg">Fav</button></li>
+                    <li class=""><button id="boardBtn" class="text-white bg-neutral-700 p-4 ml-1 rounded-t-lg">Board</button></li>
+                    <li class=""><button id="colBtn"class="text-white bg-neutral-700 p-4 ml-1 rounded-t-lg">Collection</button></li>
+                    <li class=""><button id="pcBtn" class="text-white bg-neutral-700 p-4 ml-1 rounded-t-lg">PCs</button></li>
+                    <li class=""><button id="npcBtn" class="text-white bg-neutral-700 p-4 ml-1 rounded-t-lg">NPCs</button></li>
+                    <li class=""><button id="monBtn" class="text-white bg-neutral-700 p-4 ml-1 rounded-t-lg">Monsters<button></li>
+                </ul>
+            </div>
+
+            <!--text and characters/monsters cards -->
+
+            <!-- welcome page -->
+            <div class="cardPage grow rounded-b-lg bg-neutral-600">
+                <h1 class="text-4xl p-2 text-purple-300"> Greetings, traveler! </h1> 
+                <h2 class="text-2xl p-2 text-purple-200"> This text is something i call guide to my cite </h2>
+
+                <p class="text-xl px-2 text-purple-200 tracking-wide "> 
+                    Above you can see some tabs, if i haven't changed them to icons, i should explain what each of them mean. <br>
+                    First one is favorites, which you may use for preparation to compaign. <br>
+                    Second tab is showing what cards you have on board right now. <br>
+                    Third is collection of all items, you have made or saved. <br>
+                    Left tabs are collections of cards, made by other people (PCs, NPCs and monsters). </br>
+                </p>
+            </div>
+
+            <div id="Fav-block" class="grow rounded-lg hidden bg-neutral-600">
+                <%  %>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html
+

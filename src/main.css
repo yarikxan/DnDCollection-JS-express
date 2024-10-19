@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.startBanner{
+    background: linear-gradient(90deg, rgba(55, 48, 163, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(157, 23, 77,1 ) 100%);
+    background-position: 0 0;
+    background-size: 200vw auto;
+    height: 24em;
+}
+
+.cardPage{
+    overflow-y: scroll;
+    scrollbar-width: thin; 
+}
+
+.cardDescription{
+    overflow-y: auto;
+    scrollbar-width: thin;
+    overflow-x: none;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cardSlot{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0,1fr));
+    grid-template-rows: repeat(6, minmax(0,1fr));
+    gap: 0.5rem;
+    background-color: #404040;
+    border-color: #404040;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    max-height: 24rem;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-beizer(0.4,0,0.2,1);
+    transition-duration: 300ms;
+    transition-duration: 200ms;
+
+}
+
+

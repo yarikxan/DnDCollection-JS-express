@@ -1,0 +1,11 @@
+<section id="cardList" class="w-full grid grid-cols-4 gap-3 m-5 ">
+                    <% Cards.forEach(card => { %>
+                        <div class="grid grid-cols-6 grid-rows-6 gap-2 bg-neutral-700 max-h-96 rounded-lg border-2 border-neutral-700 hover:border-purple-500 transition duration-200">
+                            <div class="col-span-2 row-span-2"><img class="object-cover w-full h-full rounded-lg" src="img/Саня.jpg"></div> 
+                            <h2 class="text-gray-400 text-bold text-xl col-span-2 self-center">Type: <%= card.cardType %></h2>
+                            <p class="text-gray-400 text-semibold text-xl row-start-2 col-start-3 col-span-4">Name: <%= card.name %></p>
+                            <p class="text-gray-400 text-semibold text-xl row-start-1 col-start-5 col-span-2 self-center">Level: <%= card.level %></p>
+                            <p class="cardDescription border-2 border-neutral-600 rounded-lg text-gray-400 text-semibold text-xl row-start-3 row-span-4 col-span-6">Description: <%= card.description %></p>
+                        </div>
+                    <% }) %>
+                </section>
